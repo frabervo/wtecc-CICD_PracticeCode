@@ -1,0 +1,13 @@
+name: CI workflow
+on:         # Dieser Schlüssel definiert die Events-Trigger zum Starten eines CI-Pipeline
+  push:
+    branches: ["main"]  # Bedeutet, starte die CI-Pipline beim push zu dem main-branch. 
+  pull_request: 
+    branches: ["main"]
+
+jobs:     # Section für Jobs
+  build:  # Name des ersten Job. 
+    runs-on: ubuntu-latest  # Runner definition
+    container: python:3.9-slim
+
+
